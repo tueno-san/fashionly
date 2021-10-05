@@ -1,5 +1,5 @@
 connection: "thelook_bq"
-label: "Fashion.ly"
+label: "Tsutomu-Fashion.ly"
 # include all the views
 include: "/views/**/*.view"
 include: "/*.dashboard"
