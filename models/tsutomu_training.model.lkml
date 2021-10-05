@@ -1,4 +1,4 @@
-connection: "thelook_bq"
+connection: "looker-private-demo"
 label: "Tsutomu-Fashion.ly"
 # include all the views
 include: "/views/**/*.view"
