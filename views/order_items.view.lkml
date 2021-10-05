@@ -180,6 +180,10 @@ view: order_items {
     filters: [created_date: "yesterday"]
   }
 
+ measure: count_user {
+   type: count_distinct
+  sql: ${user_id} ;;
+ }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
