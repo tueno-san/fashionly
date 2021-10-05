@@ -21,11 +21,11 @@ explore: onetime_order_user {
     sql_on: ${onetime_order_user.user_id}=${users.id} ;;
     relationship: one_to_one
   }
-  join: order_items {
-    type: left_outer
-    sql_on: ${onetime_order_user.user_id}=${order_items.user_id} ;;
-    relationship: one_to_many
-  }
+  # join: order_items {
+  #   type: left_outer
+  #   sql_on: ${onetime_order_user.user_id}=${order_items.user_id} ;;
+  #   relationship: one_to_many
+  # }
 }
 
 explore: user_order_frequency {
@@ -35,12 +35,12 @@ explore: user_order_frequency {
     relationship: many_to_one
   }
 
-  join:order_items {
-    type: left_outer
-    sql_on: ${user_order_frequency.user_id}=${order_items.user_id} and
-      ${user_order_frequency.order_id}=${order_items.order_id};;
-    relationship: one_to_many
-  }
+  # join:order_items {
+  #   type: left_outer
+  #   sql_on: ${user_order_frequency.user_id}=${order_items.user_id} and
+  #     ${user_order_frequency.order_id}=${order_items.order_id};;
+  #   relationship: one_to_many
+  # }
 
   join: events {
     type: left_outer
