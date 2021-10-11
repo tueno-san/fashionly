@@ -94,10 +94,10 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
-  dimension: Order_SEQ {
-    type: number
-    sql: rank() over (partition by ${user_id} order by ${created_raw}) ;;
-  }
+  # dimension: Order_SEQ {
+  #   type: number
+  #   sql: rank() over (partition by ${user_id} order by ${created_raw}) ;;
+  # }
 
   set: test {
     fields: [user_id,status]
