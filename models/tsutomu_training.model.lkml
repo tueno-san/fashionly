@@ -96,6 +96,15 @@ explore: inventory_items {
 }
 
 explore: order_items {
+
+  # sql_always_where: ${created_date} >= "2000-01-01";;
+  # always_filter: {
+  #   filters: [order_items.created_date: "2000-01-01"]
+  # }
+  conditionally_filter: {
+    filters: [order_items.created_date: "2000-01-01"]
+    unless: [order_items.shipped_date]
+  }
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;

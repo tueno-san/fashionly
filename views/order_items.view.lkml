@@ -99,6 +99,9 @@ view: order_items {
     sql: rank() over (partition by ${user_id} order by ${created_raw}) ;;
   }
 
+  set: test {
+    fields: [user_id,status]
+  }
 
   measure: count {
     type: count

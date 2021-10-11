@@ -12,9 +12,11 @@ view: customer_life_time_value {
           else 'Non Active' end is_active
       FROM `ecomm.order_items` as order_items
       GROUP BY user_id
-
-
 ;;
+#partition_keys: ["user_id"]
+#sql_trigger_value:  ;;
+#datagroup_trigger:
+
   }
 
   dimension: id {
