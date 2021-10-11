@@ -105,6 +105,8 @@ explore: order_items {
   #   filters: [order_items.created_date: "2000-01-01"]
   #   unless: [order_items.shipped_date]
   # }
+  #fields: [set_test*]
+
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;

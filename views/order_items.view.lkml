@@ -99,7 +99,7 @@ view: order_items {
   #   sql: rank() over (partition by ${user_id} order by ${created_raw}) ;;
   # }
 
-  set: test {
+  set: set_test {
     fields: [user_id,status]
   }
 
