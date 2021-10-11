@@ -12,6 +12,8 @@ view: customer_life_time_value {
           else 'Non Active' end is_active
       FROM `ecomm.order_items` as order_items
       GROUP BY user_id
+
+
 ;;
   }
 
@@ -74,7 +76,7 @@ view: customer_life_time_value {
     type: duration
     sql_start: ${latest_order_date} ;;
     sql_end: CURRENT_DATE() ;;
-    intervals: [day]
+    intervals: [day,month,year]
   }
 
   dimension_group: Days_Since_First_Order {
