@@ -108,6 +108,10 @@ view: order_items {
     drill_fields: [detail*]
   }
 
+measure: ave_sales_price {
+  type: average
+  sql: ${sale_price} ;;
+}
   measure: Total_Sales_Price {
     type: sum
     sql: ${sale_price} ;;
