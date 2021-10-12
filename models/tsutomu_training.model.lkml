@@ -7,6 +7,8 @@ datagroup: training_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 
+
+
 }
 
 persist_with: training_default_datagroup
@@ -96,7 +98,10 @@ explore: inventory_items {
 }
 
 explore: order_items {
-
+#   hidden: yes
+# group_label: "オーダーとユーザ情報"
+#   label: "オーダーアイテム"
+#   description: "オーダーに関する情報"
   # sql_always_where: ${created_date} >= "2000-01-01";;
   # always_filter: {
   #   filters: [order_items.created_date: "2000-01-01"]
@@ -112,6 +117,7 @@ explore: order_items {
     sql_on: ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+
 
   join: inventory_items {
     type: left_outer
@@ -158,6 +164,7 @@ explore: products {
 }
 
 explore: users {
+# group_label: "オーダーとユーザ情報"
   join: customer_life_time_value {
     type: left_outer
     sql_on: ${users.id} = ${customer_life_time_value.id}   ;;

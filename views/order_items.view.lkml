@@ -10,6 +10,7 @@ view: order_items {
   }
 
   dimension_group: created {
+    #label: "作成日"
     type: time
     timeframes: [
       raw,
@@ -45,6 +46,7 @@ view: order_items {
   }
 
   dimension: order_id {
+   # group_label: "オーダー"
     type: number
     sql: ${TABLE}.order_id ;;
   }
@@ -84,6 +86,7 @@ view: order_items {
   }
 
   dimension: status {
+  #  group_label: "オーダー"
     type: string
     sql: ${TABLE}.status ;;
   }
